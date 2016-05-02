@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/SampleScenes/Scenes/AircraftPropeller4Axis.unity
+- path: Assets/Scenes/AircraftPropeller4Axis.unity
   isLoaded: 1
   isActive: 1
