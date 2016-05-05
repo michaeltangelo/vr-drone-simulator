@@ -4,6 +4,9 @@ using VRStandardAssets.Utils;
 
 public class MonitorCtrl : MonoBehaviour {
 
+	enum PointerState{Idle, Entering, Exiting}
+	enum ZoomState{ZoomedIn, Zooming, ZoomedOut}
+
     [SerializeField] private VRInteractiveItem mInteractivItem;
     [SerializeField] private Renderer monitorRenderer;
     [SerializeField] private float m_rayLength = 500f;
@@ -16,6 +19,8 @@ public class MonitorCtrl : MonoBehaviour {
     private Vector3 monitorPos;
     bool zoomed = false;
     bool exitingZoom = false;
+	private PointerState curState = PointerState.Idle;
+	private ZoomState curZoomState = ZoomState.ZoomedOut;
 
     void Awake()
     {
@@ -45,10 +50,11 @@ public class MonitorCtrl : MonoBehaviour {
         //Debug.Log("Remapped viewport pos: " + remappedVPPos);
         //Ray ray = CameraManager.Instance.DroneFollowCam.ViewportPointToRay(remappedVPPos);
 
-        if (!zoomed) return; //can only select while camera is zoomed
+		if(curZoomState != ZoomState.ZoomedIn) return;
+
         Camera targetCam = CameraManager.Instance.DroneFollowCam;
         Ray ray = targetCam.ScreenPointToRay(new Vector2(hitPos.x * targetCam.pixelWidth, hitPos.y * targetCam.pixelHeight));
-        //Debug.Log("hit position: " + hitPos + ", screen pixel dimensions:" + targetCam.pixelWidth + "," + targetCam.pixelHeight);
+        Debug.Log("hit position: " + hitPos + ", screen pixel dimensions:" + targetCam.pixelWidth + "," + targetCam.pixelHeight);
         RaycastHit hitInfo;
         if (Physics.Raycast(ray, out hitInfo, m_rayLength, rayCastMask))
         {
@@ -60,45 +66,75 @@ public class MonitorCtrl : MonoBehaviour {
 
     void Update()
     {
-        if(zoomed && exitingZoom)
+		if(curState != PointerState.Idle)
         {
             if(zoomTimer >= zoomDetectTime)
-            {
-                zoomed = false;
-                exitingZoom = false;
+			{
+				if(curState == PointerState.Entering) curZoomState = ZoomState.ZoomedIn;
+				else curZoomState = ZoomState.ZoomedOut;
+				curState = PointerState.Idle;
                 zoomTimer = 0;
-                //zoom out
-                CameraManager.Instance.ControlRoomCam.transform.position = Vector3.zero;
-                Debug.Log("Zooming out");
+                
+				if(curZoomState == ZoomState.ZoomedIn){
+					CameraManager.Instance.ControlRoomCam.transform.position = camZoomPos;
+					Debug.Log("Zoomed in");
+				}
+				else{
+					//zoom out
+					CameraManager.Instance.ControlRoomCam.transform.position = Vector3.zero;
+					Debug.Log("Zoomed out");
+				}
             }
             zoomTimer += Time.deltaTime;
         }
     }
 
-    void OnMouseEnter()
+    public void OnHoverIn()
     {
-        zoomTimer = 0;
-        exitingZoom = false;
+		Debug.Log("pointer entering");
+		if(curZoomState == ZoomState.ZoomedOut){
+			curZoomState = ZoomState.Zooming;
+			zoomTimer = 0;
+			curState = PointerState.Entering;
+			Debug.Log("zooming in");
+		}
+		else{
+			curZoomState = ZoomState.ZoomedIn;
+			curState = PointerState.Idle;
+		}
     }
 
-    void OnMouseOver()
-    {
-        if (zoomed) return;
+	public void DetectDroneComponent(){
+		DroneComponentSelector.Instance.DetectDroneComponent();
+	}
 
-        if(zoomTimer >= zoomDetectTime)
-        {
-            zoomed = true;
-            //zoom in the camera
-            CameraManager.Instance.ControlRoomCam.transform.position = camZoomPos;
-            Debug.Log("Zooming in");
-        }
-        zoomTimer += Time.deltaTime;
-    }
-
-    void OnMouseExit()
+//	    void OnMouseOver()
+//    {
+//        if (zoomed) return;
+//
+//        if(zoomTimer >= zoomDetectTime)
+//        {
+//            zoomed = true;
+//            //zoom in the camera
+//            CameraManager.Instance.ControlRoomCam.transform.position = camZoomPos;
+//            Debug.Log("Zooming in");
+//        }
+//        zoomTimer += Time.deltaTime;
+//    }
+//
+    public void OnHoverOut()
     {
-        zoomTimer = 0;
-        exitingZoom = true;
+		Debug.Log("pointer exiting");
+		if(curZoomState == ZoomState.ZoomedIn){
+			curZoomState = ZoomState.Zooming;
+			zoomTimer = 0;
+			curState = PointerState.Exiting;
+			Debug.Log("Zooming out");
+		}
+		else{
+			curZoomState = ZoomState.ZoomedOut;
+			curState = PointerState.Idle;
+		}
     }
 
     //void OnMouseDown()
