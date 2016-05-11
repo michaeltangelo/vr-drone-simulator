@@ -1,0 +1,77 @@
+Initialize engine version: 5.3.1f1 (cc9cbbcc37b4)
+[VRDevice] Successfully created device oculus.
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 760 (ID=0x1187)
+    Vendor:   NVIDIA
+    VRAM:     1989 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: E:\Google Drive\Unity\vr-drone-simulator-michael-mac1\vr-drone-simulator-michael-mac\Drone Simulator\Builds\test_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading E:\Google Drive\Unity\vr-drone-simulator-michael-mac1\vr-drone-simulator-michael-mac\Drone Simulator\Builds\test_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: E:\Google Drive\Unity\vr-drone-simulator-michael-mac1\vr-drone-simulator-michael-mac\Drone Simulator\Builds\test_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading E:\Google Drive\Unity\vr-drone-simulator-michael-mac1\vr-drone-simulator-michael-mac\Drone Simulator\Builds\test_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: E:\Google Drive\Unity\vr-drone-simulator-michael-mac1\vr-drone-simulator-michael-mac\Drone Simulator\Builds\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading E:\Google Drive\Unity\vr-drone-simulator-michael-mac1\vr-drone-simulator-michael-mac\Drone Simulator\Builds\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: E:\Google Drive\Unity\vr-drone-simulator-michael-mac1\vr-drone-simulator-michael-mac\Drone Simulator\Builds\test_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading E:\Google Drive\Unity\vr-drone-simulator-michael-mac1\vr-drone-simulator-michael-mac\Drone Simulator\Builds\test_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: E:\Google Drive\Unity\vr-drone-simulator-michael-mac1\vr-drone-simulator-michael-mac\Drone Simulator\Builds\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading E:\Google Drive\Unity\vr-drone-simulator-michael-mac1\vr-drone-simulator-michael-mac\Drone Simulator\Builds\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: E:\Google Drive\Unity\vr-drone-simulator-michael-mac1\vr-drone-simulator-michael-mac\Drone Simulator\Builds\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading E:\Google Drive\Unity\vr-drone-simulator-michael-mac1\vr-drone-simulator-michael-mac\Drone Simulator\Builds\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.111 seconds
+Platform assembly: E:\Google Drive\Unity\vr-drone-simulator-michael-mac1\vr-drone-simulator-michael-mac\Drone Simulator\Builds\test_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: E:\Google Drive\Unity\vr-drone-simulator-michael-mac1\vr-drone-simulator-michael-mac\Drone Simulator\Builds\test_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 144Hz; virtual: 3840x1200 at -1920,-120
+<RI> Initializing input.
+<RI.Hid> Failed to create device file:
+ 2 The system cannot find the file specified.
+
+ 
+(Filename:  Line: 54)
+
+<RI.Hid> Failed to create device file:
+ 2 The system cannot find the file specified.
+
+ 
+(Filename:  Line: 54)
+
+<RI.Hid> Failed to create device file:
+ 2 The system cannot find the file specified.
+
+ 
+(Filename:  Line: 54)
+
+<RI> Input initialized.
+<RI> Initialized touch support.
+The referenced script on this Behaviour (Game Object 'AircraftPropeller') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object 'MonitorView') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object 'MainCamera') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object 'LevelReset') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object 'MenuLoader') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object 'MainCamera') is missing!
+ 
+(Filename:  Line: 1655)
+
+The referenced script on this Behaviour (Game Object 'MainCamera') is missing!
+ 
+(Filename:  Line: 1655)
+
+UnloadTime: 0.597228 ms
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 13fa4 -> priority: 1 
