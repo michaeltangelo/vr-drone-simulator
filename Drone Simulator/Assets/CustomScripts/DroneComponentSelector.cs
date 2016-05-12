@@ -10,9 +10,13 @@ public class DroneComponentSelector : MonoBehaviour {
 
     [SerializeField] private float m_rayLength = 500f;
     [SerializeField] private LayerMask m_ExclusionLayers;    // Layers to exclude from the raycast.
-    [SerializeField] private Camera m_Camera;
+	[SerializeField] private Transform m_CameraTransform;
+    private Camera m_Camera;
     public List<DroneComponentData> droneComponentData;
     [SerializeField] private Color selectionColor;
+	public Vector3 CameraStartPos;
+
+	[HideInInspector] public MonitorCtrl currMonitor = null;
 
 //    DroneComponentData prevSelection;
     private DroneComponentData mCurSelection;
@@ -23,6 +27,7 @@ public class DroneComponentSelector : MonoBehaviour {
         {
 			Material mat;
 			Color color;
+
 			if(mCurSelection != null)
             {
                 //remove markers from previous selection
@@ -31,6 +36,13 @@ public class DroneComponentSelector : MonoBehaviour {
 					color = mat.GetColor("_RimColor");
 					color.a = 0;
 					mat.SetColor("_RimColor", color);
+				}
+
+				for(int i=0;i<mCurSelection.controllerParts.Length;i++){
+					mat = mCurSelection.controllerParts[i].material;
+					color = mat.GetColor("_OutlineColor");
+					color.a = 0;
+					mat.SetColor("_OutlineColor", color);
 				}
             }
 
@@ -42,6 +54,13 @@ public class DroneComponentSelector : MonoBehaviour {
 				color = mat.GetColor("_RimColor");
 				color.a = 1;
 				mat.SetColor("_RimColor", color);
+			}
+
+			for(int i=0;i<mCurSelection.controllerParts.Length;i++){
+				mat = mCurSelection.controllerParts[i].material;
+				color = mat.GetColor("_OutlineColor");
+				color.a = 1;
+				mat.SetColor("_OutlineColor", color);
 			}
 
 
@@ -77,7 +96,11 @@ public class DroneComponentSelector : MonoBehaviour {
     void Awake()
     {
         mInstance = this;
-        if (m_Camera == null) m_Camera = Camera.main;
+		if (m_CameraTransform == null){
+			m_Camera = Camera.main;
+			m_CameraTransform = Camera.main.transform;
+		}
+		CameraStartPos = m_CameraTransform.position;
     }
 	
 	// Update is called once per frame
@@ -92,7 +115,7 @@ public class DroneComponentSelector : MonoBehaviour {
 
 	public void DetectDroneComponent(){
 //		detectionRay = m_Camera.ScreenPointToRay(Input.mousePosition);
-		if(Physics.Raycast(m_Camera.transform.position,m_Camera.transform.forward, out hitInfo, m_rayLength, ~m_ExclusionLayers))
+		if(Physics.Raycast(m_CameraTransform.position,m_CameraTransform.forward, out hitInfo, m_rayLength, ~m_ExclusionLayers))
 		{
 			//Debug.Log("hit " + hitInfo.collider.name);
 			MonitorCtrl monitorSelector = hitInfo.collider.GetComponent<MonitorCtrl>();

@@ -12,20 +12,20 @@ public class MonitorCtrl : MonoBehaviour {
     [SerializeField] private float m_rayLength = 500f;
     [SerializeField] private LayerMask rayCastMask;
     [SerializeField] private float zoomDetectTime = 2f; //zooms in/out after user hovers over/away from screen for duration
-    [SerializeField] private Vector3 camZoomPos;
+//    [SerializeField] private Vector3 camZoomPos;
 
 
     private float zoomTimer = 0;
-    private Vector3 monitorPos;
-    bool zoomed = false;
-    bool exitingZoom = false;
+//    private Vector3 monitorPos;
+//    bool zoomed = false;
+//    bool exitingZoom = false;
 	private PointerState curState = PointerState.Idle;
 	private ZoomState curZoomState = ZoomState.ZoomedOut;
 
     void Awake()
     {
         mInteractivItem.OnOver += HandleOver;
-        monitorPos = monitorRenderer.transform.position;
+//        monitorPos = monitorRenderer.transform.position;
     }
 
 
@@ -76,12 +76,17 @@ public class MonitorCtrl : MonoBehaviour {
                 zoomTimer = 0;
                 
 				if(curZoomState == ZoomState.ZoomedIn){
-					CameraManager.Instance.ControlRoomCam.transform.position = camZoomPos;
+//					CameraManager.Instance.ControlRoomCam.transform.position = camZoomPos;
+					CameraManager.Instance.ControlRoomRootTransform.position = transform.TransformPoint(0,0,-CameraManager.Instance.MonitorZoomZOffset);
+					if(DroneComponentSelector.Instance.currMonitor != null) DroneComponentSelector.Instance.currMonitor.curZoomState = ZoomState.ZoomedOut;
+					DroneComponentSelector.Instance.currMonitor = this;
 					Debug.Log("Zoomed in");
 				}
 				else{
 					//zoom out
-					CameraManager.Instance.ControlRoomCam.transform.position = Vector3.zero;
+//					CameraManager.Instance.ControlRoomCam.transform.position = DroneComponentSelector.Instance.CameraStartPos;
+					CameraManager.Instance.ControlRoomRootTransform.position = DroneComponentSelector.Instance.CameraStartPos;
+					DroneComponentSelector.Instance.currMonitor = null;
 					Debug.Log("Zoomed out");
 				}
             }
@@ -93,6 +98,10 @@ public class MonitorCtrl : MonoBehaviour {
     {
 		Debug.Log("pointer entering");
 		if(curZoomState == ZoomState.ZoomedOut){
+			//check the zoom state of the current monitor
+//			if(DroneComponentSelector.Instance.currMonitor != null){
+//				DroneComponentSelector.Instance.currMonitor
+//			}
 			curZoomState = ZoomState.Zooming;
 			zoomTimer = 0;
 			curState = PointerState.Entering;
