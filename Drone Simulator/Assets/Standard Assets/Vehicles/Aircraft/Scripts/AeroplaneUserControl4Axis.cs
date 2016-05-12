@@ -11,6 +11,7 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
         public float maxRollAngle = 80;
         public float maxPitchAngle = 80;
         public bool controllerEnabled = false;
+        private bool pilotMode = true;
 
         public string getThrottleClamped()
         {
@@ -22,7 +23,22 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
         private float m_Throttle;
         private bool m_AirBrakes;
         private float m_Yaw;
+        private bool m_ToggleOperatorMode;
 
+        public void setPilotMode(bool boolean)
+        {
+            pilotMode = boolean;
+        }
+
+        public bool getPilotMode()
+        {
+            return pilotMode;
+        }
+
+        public void togglePilotMode()
+        {
+            pilotMode = !pilotMode;
+        }
 
         private void Awake()
         {
@@ -46,18 +62,30 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
             }
             else
             {
-                // ps4 controller map https://www.reddit.com/r/Unity3D/comments/1syswe/ps4_controller_map_for_unity/
+                // ps4 controller map https://www.reddit.com/r/Unity3D/comments/1syswe/ps4_controller_map_for_unit/y
                 roll = CrossPlatformInputManager.GetAxis("PS3ControllerRightX");
                 pitch = CrossPlatformInputManager.GetAxis("PS3ControllerRightY");
                 m_AirBrakes = CrossPlatformInputManager.GetButton("Fire1"); // Joystick 4 aka L1 on PS4 Controller
                 m_Yaw = CrossPlatformInputManager.GetAxis("PS3ControllerRightX");
                 m_Throttle = CrossPlatformInputManager.GetAxis("PS3ControllerThrottleY");
+                m_ToggleOperatorMode = CrossPlatformInputManager.GetButtonDown("PS3ControllerOButton");
             }
 #if MOBILE_INPUT
         AdjustInputForMobileControls(ref roll, ref pitch, ref m_Throttle);
 #endif
+
+            if (m_ToggleOperatorMode) togglePilotMode();
+
             // Pass the input to the aeroplane
-            m_Aeroplane.Move(roll, pitch, m_Yaw, m_Throttle, m_AirBrakes);
+            // if pilot mode disabled, send no signals to plane except throttle and turn camera instead
+            if (pilotMode)
+            {
+                m_Aeroplane.Move(roll, pitch, m_Yaw, m_Throttle, m_AirBrakes);
+            }
+            else
+            {
+                m_Aeroplane.Move(0, 0, 0, m_Throttle, m_AirBrakes);
+            }
         }
 
 
