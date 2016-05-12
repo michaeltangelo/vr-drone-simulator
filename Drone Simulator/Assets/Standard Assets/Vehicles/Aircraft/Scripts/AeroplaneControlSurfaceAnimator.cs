@@ -102,11 +102,7 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
             public float amount; // The amount by which they can rotate.
             public Type type; // The type of control surface.
 
-<<<<<<< HEAD
             public Quaternion originalLocalRotation; // The rotation of the surface at the start.
-=======
-            [HideInInspector] public Quaternion originalLocalRotation; // The rotation of the surface at the start.
->>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
         }
     }
 }

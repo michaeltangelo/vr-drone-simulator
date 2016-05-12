@@ -163,10 +163,6 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
 
             // current engine power is just:
             EnginePower = Throttle*m_MaxEnginePower;
-<<<<<<< HEAD
-          
-=======
->>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
         }
 
 

@@ -1,7 +1,5 @@
-<<<<<<< HEAD
 using System;
-=======
->>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
+
 using System.Collections.Generic;
 using UnityEditor;
 
@@ -25,11 +23,7 @@ namespace UnityStandardAssets.CrossPlatformInput.Inspector
                 SetEnabled("MOBILE_INPUT", true, true);
             }
         }
-
-<<<<<<< HEAD
-
-=======
->>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
+			
         [MenuItem("Mobile Input/Enable")]
         private static void Enable()
         {
@@ -40,15 +34,10 @@ namespace UnityStandardAssets.CrossPlatformInput.Inspector
                 case BuildTarget.iOS:
                 case BuildTarget.WP8Player:
                 case BuildTarget.BlackBerry:
-<<<<<<< HEAD
+				
 				case BuildTarget.PSM: 
 				case BuildTarget.Tizen: 
 				case BuildTarget.WSAPlayer: 
-=======
-                case BuildTarget.PSM:
-                case BuildTarget.Tizen:
-                case BuildTarget.WSAPlayer:
->>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
                     EditorUtility.DisplayDialog("Mobile Input",
                                                 "You have enabled Mobile Input. You'll need to use the Unity Remote app on a connected device to control your game in the Editor.",
                                                 "OK");
@@ -61,22 +50,14 @@ namespace UnityStandardAssets.CrossPlatformInput.Inspector
                     break;
             }
         }
-
-<<<<<<< HEAD
-
-=======
->>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
+			
         [MenuItem("Mobile Input/Enable", true)]
         private static bool EnableValidate()
         {
             var defines = GetDefinesList(mobileBuildTargetGroups[0]);
             return !defines.Contains("MOBILE_INPUT");
         }
-
-<<<<<<< HEAD
-
-=======
->>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
+			
         [MenuItem("Mobile Input/Disable")]
         private static void Disable()
         {
@@ -93,22 +74,14 @@ namespace UnityStandardAssets.CrossPlatformInput.Inspector
                     break;
             }
         }
-
-<<<<<<< HEAD
-
-=======
->>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
+			
         [MenuItem("Mobile Input/Disable", true)]
         private static bool DisableValidate()
         {
             var defines = GetDefinesList(mobileBuildTargetGroups[0]);
             return defines.Contains("MOBILE_INPUT");
         }
-
-<<<<<<< HEAD
-
-=======
->>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
+			
         private static BuildTargetGroup[] buildTargetGroups = new BuildTargetGroup[]
             {
                 BuildTargetGroup.Standalone,
@@ -125,7 +98,7 @@ namespace UnityStandardAssets.CrossPlatformInput.Inspector
                 BuildTargetGroup.iOS,
                 BuildTargetGroup.WP8,
                 BuildTargetGroup.BlackBerry,
-<<<<<<< HEAD
+
 				BuildTargetGroup.PSM, 
 				BuildTargetGroup.Tizen, 
 				BuildTargetGroup.WSA 
@@ -135,15 +108,6 @@ namespace UnityStandardAssets.CrossPlatformInput.Inspector
         private static void SetEnabled(string defineName, bool enable, bool mobile)
         {
             //Debug.Log("setting "+defineName+" to "+enable);
-=======
-				BuildTargetGroup.PSM,
-				BuildTargetGroup.Tizen,
-				BuildTargetGroup.WSA
-            };
-
-        private static void SetEnabled(string defineName, bool enable, bool mobile)
-        {
->>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
             foreach (var group in mobile ? mobileBuildTargetGroups : buildTargetGroups)
             {
                 var defines = GetDefinesList(group);
@@ -170,18 +134,11 @@ namespace UnityStandardAssets.CrossPlatformInput.Inspector
                 PlayerSettings.SetScriptingDefineSymbolsForGroup(group, definesString);
             }
         }
-
-<<<<<<< HEAD
-
-=======
->>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
+			
         private static List<string> GetDefinesList(BuildTargetGroup group)
         {
             return new List<string>(PlayerSettings.GetScriptingDefineSymbolsForGroup(group).Split(';'));
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
+
