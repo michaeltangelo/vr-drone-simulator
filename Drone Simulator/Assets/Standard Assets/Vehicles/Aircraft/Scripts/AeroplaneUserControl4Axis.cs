@@ -10,6 +10,7 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
         // these max angles are only used on mobile, due to the way pitch and roll input are handled
         public float maxRollAngle = 80;
         public float maxPitchAngle = 80;
+<<<<<<< HEAD
         public bool controllerEnabled = false;
         private bool pilotMode = true;
 
@@ -17,12 +18,15 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
         {
             return m_Throttle.ToString();
         }
+=======
+>>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
 
         // reference to the aeroplane that we're controlling
         private AeroplaneController m_Aeroplane;
         private float m_Throttle;
         private bool m_AirBrakes;
         private float m_Yaw;
+<<<<<<< HEAD
         private bool m_ToggleOperatorMode;
 
         public void setPilotMode(bool boolean)
@@ -39,6 +43,9 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
         {
             pilotMode = !pilotMode;
         }
+=======
+
+>>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
 
         private void Awake()
         {
@@ -49,6 +56,7 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
 
         private void FixedUpdate()
         {
+<<<<<<< HEAD
             float roll;
             float pitch;
             // Read input for the pitch, yaw, roll and throttle of the aeroplane.
@@ -86,6 +94,19 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
             {
                 m_Aeroplane.Move(0, 0, 0, m_Throttle, m_AirBrakes);
             }
+=======
+            // Read input for the pitch, yaw, roll and throttle of the aeroplane.
+            float roll = CrossPlatformInputManager.GetAxis("Horizontal");
+            float pitch = CrossPlatformInputManager.GetAxis("Vertical");
+            m_AirBrakes = CrossPlatformInputManager.GetButton("Fire1");
+            m_Yaw = CrossPlatformInputManager.GetAxis("Horizontal");
+            m_Throttle = CrossPlatformInputManager.GetAxis("Throttle_Vertical");
+#if MOBILE_INPUT
+        AdjustInputForMobileControls(ref roll, ref pitch, ref m_Throttle);
+#endif
+            // Pass the input to the aeroplane
+            m_Aeroplane.Move(roll, pitch, m_Yaw, m_Throttle, m_AirBrakes);
+>>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
         }
 
 

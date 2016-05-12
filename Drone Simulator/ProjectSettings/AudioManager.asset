@@ -5,7 +5,18 @@ AudioManager:
   m_ObjectHideFlags: 0
   m_Volume: 1
   Rolloff Scale: 1
+<<<<<<< HEAD
   m_SpeedOfSound: 347
   Doppler Factor: 1
   Default Speaker Mode: 2
   m_DSPBufferSize: 0
+=======
+  Doppler Factor: 1
+  Default Speaker Mode: 2
+  m_SampleRate: 0
+  m_DSPBufferSize: 0
+  m_VirtualVoiceCount: 512
+  m_RealVoiceCount: 32
+  m_SpatializerPlugin: 
+  m_DisableAudio: 0
+>>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768

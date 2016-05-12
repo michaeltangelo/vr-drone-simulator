@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 57b8d2aa7951f474ba2b5c9c7c57c69b
 timeCreated: 1461897012
+=======
+guid: 508aea20c6472f14b8d68aeaeef3fb41
+timeCreated: 1462212832
+>>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -221,7 +226,11 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+<<<<<<< HEAD
   animationType: 2
+=======
+  animationType: 0
+>>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

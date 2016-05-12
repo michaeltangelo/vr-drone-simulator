@@ -5,12 +5,21 @@ PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 8
   AndroidProfiler: 0
+<<<<<<< HEAD
   defaultScreenOrientation: 2
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: 2013_10 - Sample Assets
+=======
+  defaultScreenOrientation: 3
+  targetDevice: 2
+  useOnDemandResources: 0
+  accelerometerFrequency: 60
+  companyName: Unity
+  productName: VRSamples
+>>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_ShowUnitySplashScreen: 1
@@ -23,7 +32,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   m_ActiveColorSpace: 0
   m_MTRendering: 1
+<<<<<<< HEAD
   m_MobileMTRendering: 0
+=======
+  m_MobileMTRendering: 1
+>>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
   m_Stereoscopic3D: 0
   iosShowActivityIndicatorOnLoading: -1
   androidShowActivityIndicatorOnLoading: -1
@@ -49,7 +62,11 @@ PlayerSettings:
   forceSingleInstance: 0
   resizableWindow: 0
   useMacAppStoreValidation: 0
+<<<<<<< HEAD
   gpuSkinning: 0
+=======
+  gpuSkinning: 1
+>>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
   xboxPIXTextureCapture: 0
   xboxEnableAvatar: 0
   xboxEnableKinect: 0
@@ -89,16 +106,27 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
+<<<<<<< HEAD
   bundleIdentifier: com.unity.sampleassets
+=======
+  bundleIdentifier: com.unity3d.vrstandardassets
+>>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
   bundleVersion: 1.0
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
+<<<<<<< HEAD
   virtualRealitySupported: 1
   productGUID: 0086036c33305704294abb2f69fd081d
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 9
+=======
+  virtualRealitySupported: 0
+  productGUID: 5a86b210c1fdd0a47944fb1e9e3bc5bd
+  AndroidBundleVersionCode: 1
+  AndroidMinSdkVersion: 21
+>>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
   AndroidPreferredInstallLocation: 1
   aotOptions: 
   apiCompatibilityLevel: 2
@@ -142,8 +170,13 @@ PlayerSettings:
   iOSLaunchScreenLandscape: {fileID: 0}
   iOSLaunchScreenBackgroundColor:
     serializedVersion: 2
+<<<<<<< HEAD
     rgba: 4294967040
   iOSLaunchScreenFillPct: 1
+=======
+    rgba: 0
+  iOSLaunchScreenFillPct: 100
+>>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
   iOSLaunchScreenSize: 100
   iOSLaunchScreenCustomXibPath: 
   iOSLaunchScreeniPadType: 0
@@ -160,7 +193,11 @@ PlayerSettings:
   androidSplashScreen: {fileID: 0}
   AndroidKeystoreName: 
   AndroidKeyaliasName: 
+<<<<<<< HEAD
   AndroidTVCompatibility: 1
+=======
+  AndroidTVCompatibility: 0
+>>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
   AndroidIsGame: 1
   androidEnableBanner: 1
   m_AndroidBanners:
@@ -173,6 +210,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
+<<<<<<< HEAD
       m_Icon: {fileID: 0}
       m_Width: 128
       m_Height: 128
@@ -190,6 +228,22 @@ PlayerSettings:
   - m_BuildTarget: WindowsStandaloneSupport
     m_APIs: 0200000001000000
     m_Automatic: 0
+=======
+      m_Icon: {fileID: 2800000, guid: 8de506d4489bff74488535c40e1f6f59, type: 3}
+      m_Width: 128
+      m_Height: 128
+  m_BuildTargetBatching:
+  - m_BuildTarget: Standalone
+    m_StaticBatching: 0
+    m_DynamicBatching: 0
+  - m_BuildTarget: Android
+    m_StaticBatching: 1
+    m_DynamicBatching: 0
+  m_BuildTargetGraphicsAPIs:
+  - m_BuildTarget: WindowsStandaloneSupport
+    m_APIs: 0200000001000000
+    m_Automatic: 1
+>>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
   webPlayerTemplate: APPLICATION:Default
   m_TemplateCustomTags: {}
   wiiUTitleID: 0005000011000000
@@ -229,7 +283,11 @@ PlayerSettings:
   ps3ThumbnailPath: 
   ps3BackgroundPath: 
   ps3SoundPath: 
+<<<<<<< HEAD
   ps3NPAgeRating: -1
+=======
+  ps3NPAgeRating: 12
+>>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
   ps3TrophyCommId: 
   ps3NpCommunicationPassphrase: 
   ps3TrophyPackagePath: 
@@ -253,7 +311,11 @@ PlayerSettings:
   ps4AppType: 0
   ps4ParamSfxPath: 
   ps4VideoOutPixelFormat: 0
+<<<<<<< HEAD
   ps4VideoOutResolution: 4
+=======
+  ps4VideoOutResolution: 6
+>>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
   ps4PronunciationXMLPath: 
   ps4PronunciationSIGPath: 
   ps4BackgroundImagePath: 
@@ -311,7 +373,11 @@ PlayerSettings:
   psp2LiveAreaTrialPath: 
   psp2PatchChangeInfoPath: 
   psp2PatchOriginalPackage: 
+<<<<<<< HEAD
   psp2PackagePassword: 2nh1Eor4ovj51YmEilItxJdcQQtokAsb
+=======
+  psp2PackagePassword: F69AzBlax3CF3EDNhm3soLBPh71Yexui
+>>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
   psp2KeystoneFile: 
   psp2MemoryExpansionMode: 0
   psp2DRMType: 0
@@ -347,16 +413,29 @@ PlayerSettings:
     2: CROSS_PLATFORM_INPUT
     4: CROSS_PLATFORM_INPUT;MOBILE_INPUT
     7: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+<<<<<<< HEAD
     15: CROSS_PLATFORM_INPUT;MOBILE_INPUT
     16: CROSS_PLATFORM_INPUT;MOBILE_INPUT
   metroPackageName: 2013_10 - Sample Assets
+=======
+    14: MOBILE_INPUT
+    15: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+    16: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+    17: MOBILE_INPUT
+    20: MOBILE_INPUT
+  metroPackageName: VRStandardAssets
+>>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
+<<<<<<< HEAD
   metroApplicationDescription: 2013_10 - Sample Assets
+=======
+  metroApplicationDescription: VRStandardAssets
+>>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
   wsaImages: {}
   metroTileShortName: 
   metroCommandLineArgsFile: 
@@ -428,6 +507,7 @@ PlayerSettings:
   XboxOneDescription: 
   XboxOneIsContentPackage: 0
   XboxOneEnableGPUVariability: 0
+<<<<<<< HEAD
   XboxOneSockets:
     Unity Internal - Mono async-IO:
       m_Name: Unity Internal - Mono async-IO
@@ -437,12 +517,19 @@ PlayerSettings:
       m_TemplateName: 
       m_SessionRequirment: 0
       m_DeviceUsages: 
+=======
+  XboxOneSockets: {}
+>>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
   XboxOneSplashScreen: {fileID: 0}
   XboxOneAllowedProductIds: []
   XboxOnePersistentLocalStorageSize: 0
   intPropertyNames:
   - Android::ScriptingBackend
   - Metro::ScriptingBackend
+<<<<<<< HEAD
+=======
+  - PS4::ScriptingBackend
+>>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
   - Standalone::ScriptingBackend
   - WP8::ScriptingBackend
   - WebGL::ScriptingBackend
@@ -450,24 +537,48 @@ PlayerSettings:
   - WebGL::exceptionSupport
   - WebGL::memorySize
   - iOS::Architecture
+<<<<<<< HEAD
   - iOS::ScriptingBackend
   Android::ScriptingBackend: 0
   Metro::ScriptingBackend: 2
+=======
+  - iOS::EnableIncrementalBuildSupportForIl2cpp
+  - iOS::ScriptingBackend
+  Android::ScriptingBackend: 0
+  Metro::ScriptingBackend: 2
+  PS4::ScriptingBackend: 0
+>>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
   Standalone::ScriptingBackend: 0
   WP8::ScriptingBackend: 2
   WebGL::ScriptingBackend: 1
   WebGL::audioCompressionFormat: 4
+<<<<<<< HEAD
   WebGL::exceptionSupport: 0
   WebGL::memorySize: 256
   iOS::Architecture: 2
   iOS::ScriptingBackend: 0
+=======
+  WebGL::exceptionSupport: 1
+  WebGL::memorySize: 256
+  iOS::Architecture: 2
+  iOS::EnableIncrementalBuildSupportForIl2cpp: 0
+  iOS::ScriptingBackend: 1
+>>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
   boolPropertyNames:
   - WebGL::analyzeBuildSize
   - WebGL::dataCaching
   - WebGL::useEmbeddedResources
+<<<<<<< HEAD
   WebGL::analyzeBuildSize: 0
   WebGL::dataCaching: 0
   WebGL::useEmbeddedResources: 0
+=======
+  - XboxOne::enus
+  WebGL::analyzeBuildSize: 0
+  WebGL::dataCaching: 0
+  WebGL::useEmbeddedResources: 0
+  XboxOne::enus: 1
+>>>>>>> c829e0fbbc70cd9a7f46cc9d20fa50fb19db1768
   stringPropertyNames:
   - WebGL::emscriptenArgs
   - WebGL::template
